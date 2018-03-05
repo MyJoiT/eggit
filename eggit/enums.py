@@ -1,5 +1,5 @@
 '''
-sex enum
+enum
 
 :author: JoiT
 :email: myjoit@outlook.com
