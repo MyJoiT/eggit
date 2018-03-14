@@ -6,6 +6,7 @@ string utilities
 '''
 
 import time
+from datetime import datetime
 
 
 class DTFormat(object):
@@ -33,3 +34,8 @@ class DateTimeUtils():
             return time.mktime(struct_time)
         except ValueError as e:
             return None
+
+    @staticmethod
+    def now():
+        dft = DTFormat()
+        return datetime.now().strftime(dft.datetime_format)
