@@ -7,6 +7,7 @@ setup(
     auther='JoiT',
     author_email='myjoit@outlook.com',
     url='https://github.com/MyJoiT/eggit',
+    download_url='https://github.com/MyJoiT/eggit/archive/0.0.1.tar.gz',
     packages=find_packages(exclude=[]),
     keywords=('eggit'),
     install_requires=[],

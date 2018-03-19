@@ -1,10 +1,3 @@
-'''
-enum
-
-:author: JoiT
-:email: myjoit@outlook.com
-'''
-
 from enum import Enum, unique
 
 

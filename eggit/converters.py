@@ -1,11 +1,3 @@
-'''
-converters
-
-:author: JoiT
-:email: myjoit@outlook.com
-'''
-
-
 class Converter(object):
     '''
     converters

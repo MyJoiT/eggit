@@ -1,10 +1,3 @@
-'''
-string utilities
-
-:author: JoiT
-:email: myjoit@outlook.com
-'''
-
 import time
 from datetime import datetime
 
@@ -37,5 +30,10 @@ class DateTimeUtils():
 
     @staticmethod
     def now():
+        '''
+        get now datetime
+
+        :returns: datetime string
+        '''
         dft = DTFormat()
         return datetime.now().strftime(dft.datetime_format)
