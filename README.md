@@ -2,8 +2,6 @@
 
 > author: JoiT
 > email: myjoit@outlook.com
-> wechat: wx1076869692
-> cnblogs: http://joit.cnblogs.com/
 
 ## 1. Source Code 
 
