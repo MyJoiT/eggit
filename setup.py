@@ -11,5 +11,6 @@ setup(
     packages=find_packages(exclude=[]),
     keywords=('eggit'),
     install_requires=[],
+    License: 'GPL 3.0',
     zip_safe=False
 )
