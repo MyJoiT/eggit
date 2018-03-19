@@ -7,3 +7,4 @@ logs/
 .envrc
 *.egg-info/
 migrations/
+dist/
