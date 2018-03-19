@@ -9,8 +9,8 @@ setup(
     url='https://github.com/MyJoiT/eggit',
     download_url='https://github.com/MyJoiT/eggit/archive/0.0.1.tar.gz',
     packages=find_packages(exclude=[]),
-    keywords=('eggit'),
+    keywords=('eggit, lib, tool'),
     install_requires=[],
-    License='GPL3',
-    zip_safe=False
+    license='GPL3',
+    zip_safe=True
 )
