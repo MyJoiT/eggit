@@ -7,4 +7,6 @@ logs/
 .envrc
 *.egg-info/
 migrations/
-dist/
+dist
+build
+.python-version
