@@ -28,7 +28,8 @@ def response(msg=None,
              bool_status=False,
              data=None,
              error_code=None,
-             data_encoder=True):
+             data_encoder=True,
+             content_type=None):
 
     content = JsonResult(msg, bool_status, data, error_code)
 
@@ -39,16 +40,19 @@ def response(msg=None,
             check_circular=False,
             ensure_ascii=False))
 
+    if content_type:
+        result.headers['Content-Type'] = content_type
+
     return result
 
 
-def ok(data=None, msg='ok', data_encoder=True):
-    return response(msg, True, data, None)
+def ok(data=None, msg='ok', data_encoder=True, content_type='application/json;charset=UTF-8'):
+    return response(msg, True, data, None, data_encoder, content_type)
 
 
-def error(data=None, msg='error', error_code=None):
-    return response(msg, False, data, error_code)
+def error(data=None, msg='error', error_code=None, content_type='application/json;charset=UTF-8'):
+    return response(msg, False, data, error_code, content_type=content_type)
 
 
-def blank(data=None, msg='no content', error_code=None):
-    return response(msg, False, data, error_code)
+def blank(data=None, msg='no content', error_code=None, content_type='application/json;charset=UTF-8'):
+    return response(msg, False, data, error_code, content_type=content_type)
