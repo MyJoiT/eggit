@@ -37,3 +37,33 @@ class DateTimeUtils():
         '''
         dft = DTFormat()
         return datetime.now().strftime(dft.datetime_format)
+
+    @staticmethod
+    def get_datetime_string(datetime_obj):
+        '''
+        get datetime string from datetime object
+
+        example:
+            DateTimeUtils.get_datetime_string(datetime.now())
+
+        :param datetime_obj: datetime object
+        :returns: datetime string
+        '''
+
+        dft = DTFormat()
+        return datetime_obj.strftime(dft.datetime_format)
+
+    @staticmethod
+    def get_datetime_object(datetime_str):
+        '''
+        get datetime object from datetime string
+
+        example:
+            DateTimeUtils.get_datetime_object('2018-01-01 00:00:00')
+
+        :param datetime string: datetime string
+        :returns: datetime object
+        '''
+
+        dft = DTFormat()
+        return datetime.strptime(datetime_str, dft.datetime_format)
