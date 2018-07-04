@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name='eggit',
-    version='0.0.8',
+    version='0.0.9',
     description='a python lib',
     author='JoiT',
     author_email='myjoit@outlook.com',
     url='https://github.com/MyJoiT/eggit',
-    download_url='https://github.com/MyJoiT/eggit/archive/0.0.8.tar.gz',
+    download_url='https://github.com/MyJoiT/eggit/archive/0.0.9.tar.gz',
     packages=find_packages(exclude=[]),
     keywords=('eggit, lib, tool'),
     install_requires=[
