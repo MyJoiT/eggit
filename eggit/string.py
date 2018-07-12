@@ -12,6 +12,32 @@ class DTFormat(object):
 
 
 class DateTimeUtils():
+
+    @staticmethod
+    def timestamp_to_datetime_object(timestamp):
+        '''
+        1514736000 --> datetime object
+
+        :param timestamp: unix timestamp
+        :returns: datetime object
+        :raises ValueError: timestamp string format error
+        '''
+        if isinstance(timestamp, (int, float, str)):
+            try:
+                timestamp = int(timestamp)
+            except ValueError:
+                return None
+
+            if len(str(timestamp)) == 13:
+                timestamp = int(timestamp / 1000)
+            if len(str(timestamp)) != 10:
+                return None
+
+        else:
+            return None
+
+        return datetime.fromtimestamp(timestamp)
+
     @staticmethod
     def to_time_stamp(datetime_str):
         '''
@@ -67,3 +93,14 @@ class DateTimeUtils():
 
         dft = DTFormat()
         return datetime.strptime(datetime_str, dft.datetime_format)
+
+    def timestamp_to_datetime_string(timestamp):
+        '''
+        1514736000 --> 2018-01-01 00:00:00 (string)
+
+        :param timestamp: unix timestamp
+        :returns: datetime object
+        :raises ValueError: timestamp string format error
+        '''
+
+        return DateTimeUtils.get_datetime_string(DateTimeUtils.timestamp_to_datetime_object(timestamp))
