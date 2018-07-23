@@ -2,3 +2,7 @@
     2018-07-04
     add some functions for format
     example: get_datetime_string, get_datetime_object
+
+0.0.13:
+    2018-07-23
+    change http status code 202 to 200 in flask_restful_fixed.py
