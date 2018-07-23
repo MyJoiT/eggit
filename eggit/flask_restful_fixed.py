@@ -41,7 +41,7 @@ class Api2(Api):
         # features
         headers = Headers()
         if isinstance(e, HTTPException):
-            code = 202
+            code = 200
             default_data = {
                 'error_code': 100000,
                 'msg': getattr(e, 'description', http_status_message(code)),
@@ -49,7 +49,7 @@ class Api2(Api):
             }
             headers = e.get_response().headers
         else:
-            code = 202
+            code = 200
             default_data = {
                 'error_code': 100000,
                 'msg': str(e),
