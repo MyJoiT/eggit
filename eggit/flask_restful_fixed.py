@@ -41,29 +41,37 @@ class Api2(Api):
         # features
         headers = Headers()
         if isinstance(e, HTTPException):
-            code = 200
             default_data = {
                 'error_code': 100000,
-                'msg': getattr(e, 'description', http_status_message(code)),
+                'msg': str(e),
                 'bool_status': False
             }
-            headers = e.get_response().headers
+        elif type(e).__name__ in ('ServiceException', 'SystemException'):
+            default_data = {
+                    'error_code': e.error_code,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
+        elif type(e).__name__ == 'NoAuthorizationError':
+            default_data = {
+                    'error_code': 0,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
+        elif type(e).__name__ == 'ExpiredSignatureError':
+            default_data = {
+                    'error_code': 1,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
         else:
-            code = 200
             default_data = {
                 'error_code': 100000,
                 'msg': str(e),
                 'bool_status': False
             }
 
-        if type(e).__name__ in ('ServiceException', 'SystemException') or \
-                type(e).__base__.__name__ in ('JWTExtendedException', 'InvalidTokenError') or \
-                type(e).__name__ in ('InvalidTokenError', 'InvalidKeyError'):
-            default_data = {
-                    'error_code': e.error_code,
-                    'msg': str(e),
-                    'bool_status': False
-                    }
+        code = 200
 
         # Werkzeug exceptions generate a content-length header which is added
         # to the response in addition to the actual content-length header
