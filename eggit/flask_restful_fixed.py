@@ -64,6 +64,12 @@ class Api2(Api):
                     'msg': str(e),
                     'bool_status': False
                     }
+        elif type(e).__name__ == 'RevokedTokenError':
+            default_data = {
+                    'error_code': 2,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
         else:
             default_data = {
                 'error_code': 100000,
