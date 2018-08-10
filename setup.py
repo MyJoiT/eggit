@@ -5,13 +5,13 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='eggit',
-    version='0.0.14',
+    version='0.0.15',
     description='a python lib',
     long_description=long_description,
     author='JoiT',
     author_email='myjoit@outlook.com',
     url='https://github.com/MyJoiT/eggit',
-    download_url='https://github.com/MyJoiT/eggit/archive/0.0.14.tar.gz',
+    download_url='https://github.com/MyJoiT/eggit/archive/0.0.15.tar.gz',
     packages=find_packages(exclude=[]),
     keywords=('eggit, lib, tool'),
     install_requires=[
