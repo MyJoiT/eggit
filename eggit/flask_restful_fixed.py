@@ -40,6 +40,7 @@ class Api2(Api):
 
         # features
         headers = Headers()
+        code = 200
         if isinstance(e, HTTPException):
             default_data = {
                 'error_code': 100000,
@@ -64,6 +65,7 @@ class Api2(Api):
                     'msg': str(e),
                     'bool_status': False
                     }
+            code = 401
         elif type(e).__name__ == 'RevokedTokenError':
             default_data = {
                     'error_code': 2,
@@ -77,7 +79,6 @@ class Api2(Api):
                 'bool_status': False
             }
 
-        code = 200
 
         # Werkzeug exceptions generate a content-length header which is added
         # to the response in addition to the actual content-length header
