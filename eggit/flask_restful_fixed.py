@@ -59,6 +59,7 @@ class Api2(Api):
                     'msg': str(e),
                     'bool_status': False
                     }
+            code = 401
         elif type(e).__name__ == 'ExpiredSignatureError':
             default_data = {
                     'error_code': 1,
@@ -72,6 +73,7 @@ class Api2(Api):
                     'msg': str(e),
                     'bool_status': False
                     }
+            code = 401
         else:
             default_data = {
                 'error_code': 100000,
