@@ -74,6 +74,27 @@ class Api2(Api):
                     'bool_status': False
                     }
             code = 401
+        elif type(e).__name__ == 'InvalidHeaderError':
+            default_data = {
+                    'error_code': 3,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
+            code = 401
+        elif type(e).__name__ == 'InvalidSignatureError':
+            default_data = {
+                    'error_code': 4,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
+            code = 401
+        elif type(e).__name__ == 'MethodNotAllowed':
+            default_data = {
+                    'error_code': 5,
+                    'msg': str(e),
+                    'bool_status': False
+                    }
+            code = 405
         else:
             default_data = {
                 'error_code': 100000,
