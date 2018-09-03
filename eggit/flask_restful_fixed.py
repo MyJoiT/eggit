@@ -40,13 +40,14 @@ class Api2(Api):
 
         # features
         headers = Headers()
-        code = e.code
+        code = 200
         if isinstance(e, HTTPException):
             default_data = {
                 'error_code': 100000,
                 'msg': str(e),
                 'bool_status': False
             }
+            code = e.code
         elif type(e).__name__ in ('ServiceException', 'SystemException'):
             default_data = {
                     'error_code': e.error_code,
