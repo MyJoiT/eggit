@@ -40,7 +40,7 @@ class Api2(Api):
 
         # features
         headers = Headers()
-        code = 200
+        code = e.code
         if isinstance(e, HTTPException):
             default_data = {
                 'error_code': 100000,
