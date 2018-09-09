@@ -99,7 +99,7 @@ class Api2(Api):
         else:
             default_data = {
                 'error_code': 100000,
-                'msg': str(e),
+                'msg': 'No response',
                 'bool_status': False
             }
 
