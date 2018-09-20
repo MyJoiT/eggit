@@ -29,7 +29,8 @@ def response(msg=None,
              data=None,
              error_code=None,
              data_encoder=True,
-             content_type=None):
+             content_type=None,
+             http_status_code=200):
 
     content = JsonResult(msg, bool_status, data, error_code)
 
@@ -38,7 +39,7 @@ def response(msg=None,
             content.get_dict(),
             cls=(sqlalchemy_encoder() if data_encoder else None),
             check_circular=False,
-            ensure_ascii=False))
+            ensure_ascii=False), http_status_code)
 
     if content_type:
         result.headers['Content-Type'] = content_type
@@ -56,13 +57,13 @@ def get_json_data(content, data_encoder=True):
     return json.loads(data)
 
 
-def ok(data=None, msg='ok', data_encoder=True, content_type='application/json;charset=UTF-8'):
+def ok(data=None, msg='ok', data_encoder=True, content_type='application/json;charset=UTF-8', http_status_code=200):
     return response(msg, True, data, None, data_encoder, content_type)
 
 
-def error(data=None, msg='error', error_code=None, content_type='application/json;charset=UTF-8'):
+def error(msg='error', data=None, error_code=None, content_type='application/json;charset=UTF-8', http_status_code=200):
     return response(msg, False, data, error_code, content_type=content_type)
 
 
-def blank(data=None, msg='no content', error_code=None, content_type='application/json;charset=UTF-8'):
+def blank(msg='no content', data=None, error_code=None, content_type='application/json;charset=UTF-8', http_status_code=200):
     return response(msg, False, data, error_code, content_type=content_type)
