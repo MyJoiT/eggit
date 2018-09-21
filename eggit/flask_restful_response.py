@@ -58,12 +58,12 @@ def get_json_data(content, data_encoder=True):
 
 
 def ok(data=None, msg='ok', data_encoder=True, content_type='application/json;charset=UTF-8', http_status_code=200):
-    return response(msg, True, data, None, data_encoder, content_type)
+    return response(msg, True, data, None, data_encoder, content_type, http_status_code=http_status_code)
 
 
 def error(msg='error', data=None, error_code=None, content_type='application/json;charset=UTF-8', http_status_code=200):
-    return response(msg, False, data, error_code, content_type=content_type)
+    return response(msg, False, data, error_code, content_type=content_type, http_status_code=http_status_code)
 
 
 def blank(msg='no content', data=None, error_code=None, content_type='application/json;charset=UTF-8', http_status_code=200):
-    return response(msg, False, data, error_code, content_type=content_type)
+    return response(msg, False, data, error_code, content_type=content_type, http_status_code=http_status_code)
