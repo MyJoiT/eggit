@@ -1,16 +1,27 @@
 class Converter(object):
     '''
-    converters
+    Converters will help you convert A type data to B type data.
     '''
 
     @staticmethod
     def str_to_int(str_val):
         '''
-        convert string to int
+        Convert string to int::
 
-        :param str_val: the source string value
-        :returns: the target integer value
-        :raises ValueError: trigs when user provide an error str_val
+            >>> from eggit.converters import Converter
+            >>> result = Converter.str_to_int('123')
+            >>> print(result)
+            123
+            >>> result = Converter.str_to_int('abc')
+            >>> print(result)
+            None
+            >>> result = Converter.str_to_int('1.2')
+            >>> print(result)
+            None
+
+        :param str str_val: the string value
+        :return: the target integer value
+        :rtype: int or None
         '''
 
         try:
@@ -21,12 +32,21 @@ class Converter(object):
     @staticmethod
     def str_to_bool(str_val):
         '''
-        convert string to boolean
+        Convert string to boolean::
+
+            >>> from eggit.converters import Converter
+            >>> Converter.str_to_bool('True')  # or true
+            True
+            >>> Converter.str_to_bool('False')  # or false
+            False
+            >>> Converter.str_to_bool('OtherString')
+            False
 
         :param str_val: the source string value
-        :returns: the target boolean value
+        :return: the target boolean value
+        :rtype: bool
         '''
-        if (str_val == 'False'):
-            return False
+        if (str_val.lower() == 'true'):
+            return True
 
-        return True
+        return False
