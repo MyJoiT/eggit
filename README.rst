@@ -3,6 +3,8 @@ Eggit Docs
 
 ``Only support python3!``
 
+.. image:: https://assets.myjoit.com/images/logo/eggit-logo-256.png
+
 Concept
 ^^^^^^^^
 
