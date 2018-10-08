@@ -6,7 +6,7 @@
 Welcome to eggit !
 ===================
 
-I want to kill that silly folder named ``utils`` in my projects !
+I want to kill that silly folder named ``utils`` in my projects!
 
 Let's go .
 
@@ -27,10 +27,17 @@ Api Docs
 
    api
 
-
 Indices and Tables
 ^^^^^^^^^^^^^^^^^^
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+- :ref:`genindex`
+- :ref:`modindex`
+- :ref:`search`
+
+Iteration
+^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+
+   changelog

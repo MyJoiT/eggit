@@ -38,7 +38,7 @@ class DateTimeUtils():
             dtf = DTFormat()
             struct_time = time.strptime(datetime_str, dtf.datetime_format)
             return time.mktime(struct_time)
-        except ValueError as e:
+        except:
             return None
 
     @staticmethod
@@ -54,8 +54,11 @@ class DateTimeUtils():
         :rtype: datetime
         '''
 
-        dft = DTFormat()
-        return datetime.strptime(datetime_str, dft.datetime_format)
+        try:
+            dft = DTFormat()
+            return datetime.strptime(datetime_str, dft.datetime_format)
+        except:
+            return None
 
     @staticmethod
     def get_datetime_string(datetime_obj):
@@ -67,8 +70,11 @@ class DateTimeUtils():
         :rtype: str
         '''
 
-        dft = DTFormat()
-        return datetime_obj.strftime(dft.datetime_format)
+        if isinstance(datetime_obj, datetime):
+            dft = DTFormat()
+            return datetime_obj.strftime(dft.datetime_format)
+
+        return None
 
     @staticmethod
     def now_str():
@@ -94,13 +100,17 @@ class DateTimeUtils():
 
         if isinstance(timestamp, (int, float, str)):
             try:
-                timestamp = int(timestamp)
-            except ValueError:
+                timestamp = float(timestamp)
+                if timestamp.is_integer():
+                    timestamp = int(timestamp)
+            except:
                 return None
 
-            if len(str(timestamp)) == 13:
-                timestamp = int(timestamp / 1000)
-            if len(str(timestamp)) != 10:
+            temp = str(timestamp).split('.')[0]
+            if len(temp) == 13:
+                timestamp = timestamp / 1000.0
+
+            if len(temp) < 10:
                 return None
 
         else:
@@ -118,4 +128,4 @@ class DateTimeUtils():
         :rtype: str
         '''
 
-        return DateTimeUtils.get_datetime_string(DateTimeUtils.timestamp_to_datetime_object(timestamp))
+        return DateTimeUtils.get_datetime_string(DateTimeUtils.timestamp_to_datetime(timestamp))
