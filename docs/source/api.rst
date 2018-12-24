@@ -1,6 +1,12 @@
 Api Docs
 ========
 
+api_response
+^^^^^^^^^^^^
+
+.. automodule:: eggit.api_response
+   :members:
+
 converters
 ^^^^^^^^^^
 

@@ -10,3 +10,11 @@ ChangeLog
 - added tox for pytest/flake8
 - added docs with sphinx
 - fixed some bugs
+
+0.0.24
+^^^^^^
+
+``2018-12-24``
+
+- add api_response module
+- update docs for api_response module
