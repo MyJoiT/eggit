@@ -4,19 +4,19 @@ class Paginator(object):
     This class applicable for pagination in admin system
     '''
 
-    def __init__(self, page, pages, items, total, per_page=10):
+    def __init__(self, current_page, total_page_count, items, total_item_count, page_size=10):
         '''
-        :param int page: Current page number
-        :param int pages: Total page count
+        :param int current_page: Current page number
+        :param int total_page_count: Total page count
         :param object items: Paging data
-        :param int total: Total item count
-        :param int per_page: How many items per page
+        :param int total_item_count: Total item count
+        :param int page_size: How many items per page
         '''
-        self.page = page
-        self.pages = pages
+        self.current_page = current_page
+        self.total_page_count = total_page_count
         self.items = items
-        self.total = total
-        self.per_page = per_page
+        self.total_item_count = total_item_count
+        self.page_size = page_size
 
     def get_dict(self):
         '''
@@ -27,9 +27,9 @@ class Paginator(object):
         '''
 
         return dict(
-            page=self.page,
-            pages=self.pages,
-            per_page=self.per_page,
+            current_page=self.current_page,
+            total_page_count=self.total_page_count,
             items=self.items,
-            total=self.total
+            total_item_count=self.total_item_count,
+            page_size=self.page_size
         )
