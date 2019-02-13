@@ -25,3 +25,12 @@ ChangeLog
 ``2019-01-09``
 
 - update fields for paginator, make they easier to understand
+
+0.0.26
+^^^^^^
+
+``2019-02-14``
+
+- time_utils.py -> egg_time.py
+- enums.py -> egg_enum.py
+- add egg_string.py

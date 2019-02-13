@@ -1,4 +1,4 @@
-from eggit.enums import Sex
+from eggit.egg_enum import Sex
 
 
 def test_enum():

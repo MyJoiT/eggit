@@ -13,20 +13,26 @@ converters
 .. automodule:: eggit.converters
    :members:
 
-enums
-^^^^^
+egg_enum
+^^^^^^^^
 
-.. automodule:: eggit.enums
+.. automodule:: eggit.egg_enum
+   :members:
+
+egg_string
+^^^^^^^^^^
+
+.. automodule:: eggit.egg_string
+   :members:
+
+egg_time
+^^^^^^^^
+
+.. automodule:: eggit.egg_time
    :members:
 
 paginator
-^^^^^^^^^^
+^^^^^^^^^
 
 .. automodule:: eggit.paginator
-   :members:
-
-time_utils
-^^^^^^^^^^
-
-.. automodule:: eggit.time_utils
    :members:

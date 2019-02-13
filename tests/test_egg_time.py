@@ -1,4 +1,4 @@
-from eggit.time_utils import DateTimeUtils
+from eggit.egg_time import DateTimeUtils
 from datetime import datetime
 
 

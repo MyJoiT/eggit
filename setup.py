@@ -5,7 +5,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='eggit',
-    version='0.0.25',
+    version='0.0.26',
     description='a python lib',
     long_description=long_description,
     author='JoiT',
