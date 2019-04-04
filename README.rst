@@ -26,7 +26,5 @@ Contact
 
 - **Author**: JoiT_
 - **Email**: myjoit@outlook.com
-- **Instagram**: myjoit_
 
 .. _JoiT: https://blog.joit.info
-.. _myjoit: https://www.instagram.com/myjoit
